@@ -1,0 +1,102 @@
+.optPage{
+  background: url(../../assets/pubgImages/loginBg.jpg) center;
+  background-size: contain;
+  background-position-y: -170px !important;
+  .button-clear-md-light {
+		border-color: transparent;
+		color: #222;
+		background-color: transparent;
+	}
+	.login_page .formContainer ion-item {
+		background: rgba(255, 255, 255, 0.15);
+		height: 48px;
+		margin-bottom: 12px;
+		border: none !important;
+		padding-left: 20px;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		border: 1px solid #999 !important;
+		border-radius: 15px;
+	}
+}
+img.appLogo {
+    max-width: 190px;
+    display: block;
+    margin:auto
+}
+.logo{
+    margin-bottom: 60px;
+    display: block;
+}
+.icn_img{
+    width: 41px;
+    display: block;
+    margin: auto
+}
+page-otp {
+    .formContainer{
+        top: 0;
+        height: 100%;;
+    }
+	
+    .disTabcontent{
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        padding-bottom: 20px;
+    }
+    .bottomFooter{
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 0;
+        width: auto;
+    }
+    .list {
+        margin-bottom: 0;
+    }
+	
+	
+    h4{
+        color: #000;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+    p{
+        text-align: center;
+        color: #000;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .appLogo{
+        margin: auto;
+        display: block;
+    }
+    .listBox{
+        display: flex;
+        padding: 0 40px;
+        ion-item{
+            padding-left: 0 !important;
+            margin-right: 10px;
+            .item-inner{
+                padding-right: 0 !important;
+                input{
+                    margin-right: 0 !important;
+                    width: 100%;
+                    text-align: center
+                }
+            }
+        }
+        ion-item:last-child{
+            margin-right:0 !important;
+        }
+    }
+}

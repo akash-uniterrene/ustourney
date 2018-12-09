@@ -1,0 +1,121 @@
+<ion-header>
+	<ion-toolbar>
+    <ion-buttons start left>
+      <button ion-button icon-only color="royal" left>
+		<img class="header-logo" src="../../assets/icon/swords.svg" alt="" />
+      </button>
+    </ion-buttons>
+    <ion-title style="text-align: left;"> Create Tournament </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+	<p style="text-align: left;" class="header-information">Please enter the following information to create your tournament </p>
+	<ion-slides pager="false" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)">
+	  <ion-slide >
+		<ion-list>
+		  <ion-item padding-top>
+			<ion-label> Match type </ion-label>
+			<ion-select [(ngModel)]="tournamentForm.matchtype" name="matchtype" class="half-circle" interface="popover">
+			  <ion-option value="classic">Classic </ion-option>
+			  <ion-option value="arcade">Arcade</ion-option>
+			</ion-select>
+		  </ion-item>
+		  <ion-item padding-top>
+		   <ion-label> Tournament type </ion-label>
+			<ion-select [(ngModel)]="tournamentForm.tournamenttype" name="tournamenttype" class="half-circle" interface="popover">
+			  <ion-option value="solo">Solo </ion-option>
+			  <ion-option value="duo">Duo</ion-option>
+			  <ion-option value="squad">Squad</ion-option>
+			</ion-select>
+		  </ion-item>
+		  <ion-item padding-top>
+		   <ion-label> Map </ion-label>
+			<ion-select [(ngModel)]="tournamentForm.map" name="map" class="half-circle" interface="popover">
+			  <ion-option value="erangel">Erangel </ion-option>
+			  <ion-option value="miramar">Miramar</ion-option>
+			  <ion-option value="sanhok">Sanhok</ion-option>
+			</ion-select>
+		  </ion-item>
+		  <ion-item padding-top>
+			  <ion-label>Start Date</ion-label>
+			  <ion-datetime displayFormat="YYYY MMM DD " [(ngModel)]="tournamentForm.month" name="month"></ion-datetime>
+		  </ion-item>
+		  <ion-item padding-top>
+			  <ion-label>Start Time</ion-label>
+			  <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="tournamentForm.time" name="time" [ngModelOptions]="{standalone:true}"> </ion-datetime>
+		  </ion-item>
+		</ion-list>
+		
+		<ion-grid>
+		  <ion-row>
+			<ion-col col-3></ion-col>
+			<ion-col col-6>
+			<button ion-button color="danger" large outline *ngIf="!checkValid()" class="join_match" disabled>Next</button>
+			<button ion-button color="danger" large outline *ngIf="checkValid()" class="join_match" (click)="nextSlide($event)">Next</button>
+		   </ion-col>
+			<ion-col col-3></ion-col>
+		  </ion-row>
+		</ion-grid>
+	  </ion-slide>
+	  <ion-slide >
+		  <ion-item padding-top>
+			<ion-label> Entry Fee </ion-label>
+			<ion-input [(ngModel)]="tournamentForm.entry_fee" name="entry_fee" type="number"></ion-input>
+		  </ion-item>
+		  <ion-item padding-top>
+			<ion-label> Winners </ion-label>
+			<ion-select [(ngModel)]="tournamentForm.winners" name="winners" class="half-circle" interface="popover" (ionChange)="onSelectChange($event)">
+			  <ion-option value="1">1</ion-option>
+			  <ion-option value="2">2</ion-option>
+			  <ion-option value="3">3</ion-option>
+			  <ion-option value="4">4</ion-option>
+			  <ion-option value="5">5</ion-option>
+			  <ion-option value="0"> per kill </ion-option>
+			</ion-select>
+		  </ion-item>  
+		  <div class="amount_label" right edge *ngIf="tournamentForm.winning_type == 'killing'">/per kill</div>
+		    <ion-card class="custom_price_detail">
+			  <ion-card-header style="text-align: left;padding-bottom: 0;">
+				Price Details : ( /per kill )
+			  </ion-card-header>
+			  <ion-list>
+				<ion-grid>
+				  <ion-row>
+					<ion-col col-5></ion-col>
+					<ion-col col-2 text-center>
+						<button ion-item full clear icon-only text-center class="custom-trophy">
+							<img class="trophy-logo" src="../../assets/icon/trophy2.svg" alt="" />
+						</button>
+				   </ion-col>
+					<ion-col col-5></ion-col>
+				  </ion-row>
+				  <ion-row>
+					<ion-col col-4></ion-col>
+					<ion-col col-4 text-center>
+						<ion-item *ngFor="let item of winnersCount ; let i = index">
+							<ion-label> {{item}} . </ion-label>
+							<ion-input [(ngModel)]="tournamentForm.winning_price[i]" name="winning_price[i]" type="number" class="short_winning_price"style="height: 18px;"></ion-input>
+						</ion-item>	
+				   </ion-col>
+					<ion-col col-4></ion-col>
+				  </ion-row>
+				</ion-grid>
+			  </ion-list>
+			</ion-card>
+			<ion-grid>
+			  <ion-row>
+				<ion-col col-3></ion-col>
+				<ion-col col-6>
+				<button ion-button color="danger" large outline (click)="createTournament()" class="join_match">
+					Create
+				</button>
+			   </ion-col>
+				<ion-col col-3></ion-col>
+			  </ion-row>
+			</ion-grid>
+	  </ion-slide>
+	</ion-slides>  
+      
+</ion-content>

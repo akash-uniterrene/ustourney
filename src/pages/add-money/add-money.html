@@ -1,0 +1,26 @@
+<ion-content padding>
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+	  <ion-item>
+		<ion-label fixed> Enter Amount </ion-label>
+		<ion-input type="number" value="" [(ngModel)]="amount" ></ion-input>
+	  </ion-item>
+	</ion-list>
+    <ion-grid margin-top>
+	  <ion-row>
+		<ion-col class="money_add_count" (click)="addCoin(100)" > + 100</ion-col>
+		<ion-col class="money_add_count" (click)="addCoin(500)" > + 500</ion-col>
+		<ion-col class="money_add_count" (click)="addCoin(1000)" > + 1000</ion-col>
+	  </ion-row>
+	  <ion-row margin-top>
+		<ion-col col-12>
+			<button ion-button color="danger" outline (click)="makePayment()" class="payment_button">
+				Add Money
+			</button>
+		</ion-col>
+	  </ion-row>	  
+	</ion-grid>
+  </ion-card-content>
+</ion-card>
+</ion-content>

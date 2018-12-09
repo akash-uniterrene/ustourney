@@ -1,0 +1,8 @@
+{
+  "name": "pubgApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "f751687c"
+}

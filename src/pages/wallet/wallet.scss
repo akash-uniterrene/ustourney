@@ -1,0 +1,91 @@
+page-wallet {
+	.wallet_amount {
+		background-image: url(../assets/pubgImages/card-image.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 177px;
+	}
+	.wallet_amount .wallet_heading {
+		font-size: 20px;
+		width: 50%;
+		margin: auto;
+	}
+	.wallet_amount .card-content {
+		padding: 0;
+	}
+	.wallet_amount ion-card-content {
+		display: block;
+		padding: 0 !important;
+	}
+	.amount {
+		font-size: 45px;
+		width: 37%;
+		margin: auto;
+		border: 1px solid;
+		border-radius: 15px;
+		text-align: center;
+		margin-top: 15px;
+	}
+	span.rupee {
+		font-size: 15px;
+		font-weight: bold;
+	}
+	button.button.button-md.button-outline.button-outline-md.button-large.button-large-md.button-outline-md-danger {
+		width: 100%;
+		height: 35px;
+	}
+	button.join_match {
+		height: 29px;
+		font-size: 12px;
+		width: 100%;
+		text-align: center;
+	}
+	ion-item.middle_card_section.item.item-block.item-md {
+		padding: 0;
+	}
+	button.join_match {
+		border-radius: 15px;
+		height: 35PX;
+		background: rgba(248,80,50,1);
+		background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 69%, rgba(241,111,92,1) 77%, rgba(241,111,92,1) 99%, rgba(231,56,39,1) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(69%, rgba(246,41,12,1)), color-stop(77%, rgba(241,111,92,1)), color-stop(99%, rgba(241,111,92,1)), color-stop(100%, rgba(231,56,39,1)));
+		background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 69%, rgba(241,111,92,1) 77%, rgba(241,111,92,1) 99%, rgba(231,56,39,1) 100%);
+		background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 69%, rgba(241,111,92,1) 77%, rgba(241,111,92,1) 99%, rgba(231,56,39,1) 100%);
+		background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 69%, rgba(241,111,92,1) 77%, rgba(241,111,92,1) 99%, rgba(231,56,39,1) 100%);
+		background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 69%, rgba(241,111,92,1) 77%, rgba(241,111,92,1) 99%, rgba(231,56,39,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=0 );
+	}
+	
+	.recent_transaction_wrap {
+		border: 1px solid #bdbdbd;
+		border-radius: 15px;
+		overflow: hidden;
+	}
+	
+	
+}	
+.card-background-page {
+
+	  ion-card {
+		position: relative;
+		text-align: center;
+	  }
+
+	  .card-title {
+		position: absolute;
+		top: 36%;
+		font-size: 2.0em;
+		width: 100%;
+		font-weight: bold;
+		color: #fff;
+	  }
+
+	  .card-subtitle {
+		font-size: 1.0em;
+		position: absolute;
+		top: 52%;
+		width: 100%;
+		color: #fff;
+	  }
+
+	}

@@ -1,0 +1,43 @@
+<ion-content padding class="">
+<ion-card class="wallet_amount">
+  <ion-card-content>
+    <ion-card-title class="wallet_heading">
+      Account Balence
+    </ion-card-title>
+	<div class="amount"><span class="rupee">&#x20b9;</span>{{walletAmt}}</div>
+  </ion-card-content>
+</ion-card>
+<ion-grid>
+	<ion-row>
+		<ion-col col-6 >
+			<button ion-button  (click)="addMoney()" class="join_match" icon-start>
+				<ion-icon name="cash"></ion-icon>
+				ADD Money
+			</button>
+		</ion-col>
+		<ion-col col-6 >
+			<button ion-button  (click)="withdrawMoney()" class="join_match" icon-start>
+				<ion-icon name="cash"></ion-icon>
+				WITHDRAW Money
+			</button>
+		</ion-col>	
+	</ion-row>
+</ion-grid>
+<ion-list class="recent_transaction_wrap">
+  <ion-list-header>
+	<strong>Recent Transaction</strong>
+  </ion-list-header>
+  <ion-item >
+	Test Transaction
+  </ion-item>
+  <ion-item>
+	Test Transaction
+  </ion-item>
+  <ion-item>
+	Test Transaction
+  </ion-item>
+  <ion-item>
+	Test Transaction
+  </ion-item>  
+</ion-list>
+</ion-content>

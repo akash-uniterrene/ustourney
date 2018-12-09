@@ -1,0 +1,55 @@
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)" color="light" ></ion-searchbar>
+  <ion-card *ngFor="let item of tournamentItems">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/pubgImages/no-profile-img.jpeg">
+      </ion-avatar>
+      <h2>{{item.user.user_firstname}} {{item.user.user_lastname}}</h2>
+      <p>{{item.created_at | date: 'MMM , dd yyyy H:mm' }} </p>
+    </ion-item>
+
+    <div style="position: relative" (click)="viewDetail(item)">
+		<img src="assets/pubgImages/tournament_1.jpg">
+	</div>
+  <ion-item>
+    <img src="../../assets/icon/bullet.svg" style="width: 60px;float: left;font-size: 60px;"> 
+    <h2 style="text-transform: uppercase;padding-top:10px;"><strong>PUBG {{item.tournamenttype}} TOURNAMENT</strong></h2>
+    <p style="text-transform: uppercase;font-size: 11px;">{{item.date | date: 'MMM' }}<span style="color:#a00808"> {{item.date | date: 'dd' }}th </span> {{item.date | date: 'yyyy' }} <span style="color:#a00808">{{item.date | date: 'H:mm a' }}</span></p>
+  </ion-item>
+  <ion-item class="middle_card_section">
+    <ion-grid>
+	  <ion-row>
+		<ion-col col-5>			
+			<button ion-button icon-left clear style="color:#000;text-transform: lowercase;padding: 0;margin: 0;">
+			  <ion-icon name="custom-wining"></ion-icon>
+			  Winning Price
+			</button>
+			<p style="padding-left: 13px;"> &#x20b9; 400<p>
+		</ion-col>
+		<ion-col col-2></ion-col>
+		<ion-col col-5>
+			<button ion-button icon-left clear style="color:#000;text-transform: lowercase;padding: 0;margin: 0;">
+			  <ion-icon name="custom-entry"></ion-icon>
+			  Entry fee
+			</button>
+			<p style="padding-left: 13px;"> &#x20b9; 100</p>
+		</ion-col>
+	  </ion-row>
+	</ion-grid>
+  </ion-item>
+  <ion-grid>
+	  <ion-row>
+		<ion-col col-3></ion-col>
+		<ion-col col-6>
+		<button ion-button color="danger" large outline (click)="paymentPage(item)" class="join_match">
+			Join
+		</button>
+       </ion-col>
+		<ion-col col-3></ion-col>
+	  </ion-row>
+  </ion-grid>  
+  
+  </ion-card>
+</ion-content>

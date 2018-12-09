@@ -1,0 +1,29 @@
+<ion-content>
+<ion-grid *ngIf="userStatus == 'admin'">
+    <ion-row>
+      <ion-col col-12>
+		<ion-textarea [(ngModel)]="announcement.message" name="message" class="announce_area" rows="5" placeholder="Please share Room Id and Password of your tournament" name="message"></ion-textarea>
+      </ion-col>      
+    </ion-row>
+	<ion-row>
+	   <ion-col co-3>	
+	   </ion-col> 
+	   <ion-col col-6>  	
+		<button ion-button color="danger" large outline (click)="sendMessage()" class="join_match">
+			Send Message
+		</button>
+      </ion-col>
+	  <ion-col col-3>		
+	  </ion-col> 	
+	</ion-row>
+  </ion-grid>
+  
+  
+  <ion-grid>
+    <ion-row *ngFor="let message of messages">      
+      <ion-col col-9 class="my_message" padding margin-top>
+        <span>{{ message.message }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

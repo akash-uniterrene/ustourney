@@ -1,0 +1,54 @@
+<ion-content Padding>
+	<ion-list>
+	  <ion-item (tap)="viewProfile()">
+		<ion-avatar item-start>
+		  <img [src]="imageURL+profile.user_picture" onError="this.src='assets/pubgImages/no-profile-img.jpeg'">
+		</ion-avatar>
+		<h2>{{profile.firstname}} {{profile.lastname}}</h2>
+	  </ion-item>
+	</ion-list>
+	
+  <ion-list no-lines> 
+    <ion-item (tap)="editProfile()">
+      Edit Profile
+      <ion-icon name='open' style="color:#0b3bb5" item-start></ion-icon>
+    </ion-item>
+    <ion-item (tap)="changePassword()"> 
+      Change Password
+      <ion-icon name='key' style="color:#b0176a"  item-start></ion-icon>
+    </ion-item>
+	<ion-item (click)="viewWallet()">
+     Wallet
+      <ion-icon name='cash' style="color:#2c27f9e3"  item-start></ion-icon>
+    </ion-item>
+	<ion-item-divider color="light">
+		<ion-icon name='help-circle' item-start></ion-icon>
+		Help and Support
+		<ion-icon name='arrow-dropdown' item-end></ion-icon>
+	</ion-item-divider>
+    <ion-item>
+      <ion-icon name='book' style="color:#0b3bb5"  item-start></ion-icon>
+	  Term And Policy
+    </ion-item>
+	<!-- <ion-item-divider color="light">
+		<ion-icon name='settings' style="color:#26544a" item-start></ion-icon>
+		Settings and Privacy
+		<ion-icon name='arrow-dropdown' item-end></ion-icon>
+	</ion-item-divider>
+	<ion-item>
+      <ion-icon name='lock' style="color:#902d8d"  item-start></ion-icon>
+	  Privacy Settings
+    </ion-item>
+	<ion-item>
+      <ion-icon name='settings' style="color:#0b3bb5"  item-start></ion-icon>
+	  Security Settings
+    </ion-item> -->
+	<ion-item (tap)="logout()">
+      <ion-icon name='log-out' item-start></ion-icon>
+	  Logout
+    </ion-item>
+	
+	
+  </ion-list>
+
+</ion-content>

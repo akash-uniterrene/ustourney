@@ -1,0 +1,42 @@
+<ion-content>
+  <div class="item-profile" text-center #profilePic [style.background-image]="'url(assets/pubgImages/tournament_1.jpg)'">
+  </div>
+  
+  <ion-item class="middle_card_section">
+	<ion-grid>
+	  <ion-row>
+		<ion-col center><h2 center><strong>{{item.title}}</strong></h2></ion-col>
+	  </ion-row>
+	  <ion-row>
+		<ion-col col-8 >Match type : <strong>{{item.matchtype}}</strong></ion-col>
+		<ion-col col-4> Map : <strong>{{item.map}}</strong></ion-col>
+	  </ion-row>
+	  <ion-row>
+		<ion-col col-4>Winning Price</ion-col>
+		<ion-col col-4></ion-col>
+		<ion-col col-4>Entry Fee</ion-col>
+	  </ion-row>
+	  <ion-row>
+		<ion-col col-4><strong>&#x20b9; 400</strong></ion-col>
+		<ion-col col-4></ion-col>
+		<ion-col col-4><strong>&#x20b9; {{item.entry_fee}}</strong></ion-col>
+	  </ion-row>
+	</ion-grid>
+  </ion-item>
+  <progress-bar [progress]="1"></progress-bar>
+  <button ion-button color="primary" block full padding *ngIf="item.status == 'open'" >
+        Join
+  </button> 
+  <ion-list>
+      <ion-list-header>
+		<strong>Players</strong>
+	  </ion-list-header>
+	  <ion-item *ngFor="let user of item.users">
+		<ion-avatar item-start>
+		  <img src="assets/img/marty-avatar.png">
+		</ion-avatar>
+		<h2>{{user.user_firstname}} {{user.user_lastname}}</h2>
+		<p>{{user.user_name}}</p>
+	  </ion-item>
+  </ion-list>
+</ion-content>

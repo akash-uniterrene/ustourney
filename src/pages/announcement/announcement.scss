@@ -1,0 +1,52 @@
+page-announcement {
+	.header-logo {
+		width: 40px;
+		border: 1px solid;
+		border-radius: 50%;
+		color: #00000082;
+		padding: 3px;
+  }
+    ion-textarea.announce_area.input.input-md {
+		border: 1px solid #ccc;
+		border-radius: 10px;
+	}
+	
+	.message {
+        padding: 10px !important;
+        transition: all 250ms ease-in-out !important;
+        border-radius: 10px !important;
+        margin-bottom: 4px !important;
+    }
+    .my_message {
+        background: color($colors, primary) !important;
+        color: #000 !important;
+    }
+	.my_message {
+		background: #488aff30 !important;
+		color: #000 !important;
+		border: 1px solid #4f3dbf59;
+		font-size: 16px;
+	}
+	button.disable-hover.button.button-md.button-outline.button-outline-md.button-large.button-large-md.button-outline-md-danger {
+		width: 100%;
+		padding: 0;
+		height: 37px;
+	}
+	button.button.button-md.button-outline.button-outline-md.button-large.button-large-md.button-outline-md-danger {
+		width: 100%;
+		height: 35px;
+	}
+	button.join_match.disable-hover.button.button-md.button-outline.button-outline-md.button-large.button-large-md.button-outline-md-danger {
+		height: 29px;
+		font-size: 14px;
+		border-radius: 50px;
+	}
+	ion-item.middle_card_section.item.item-block.item-md {
+		padding: 0;
+	}
+	button.join_match.disable-hover.button.button-ios.button-outline.button-outline-ios.button-large.button-large-ios.button-outline-ios-danger {
+		width: 100%;
+		border-radius: 50px;
+		height: 35PX;
+	}
+}

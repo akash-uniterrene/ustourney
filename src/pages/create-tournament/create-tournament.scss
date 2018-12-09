@@ -1,0 +1,75 @@
+page-create-tournament {
+	ion-list ion-radio {
+		visibility: hidden !important;
+	}
+
+	.amount_label {
+		position: absolute;
+		right: 23px;
+		font-size: 20px;
+		bottom: 58px;
+	}
+	.header-logo {
+		width: 40px;
+		color: #00000082;
+		padding: 3px;
+	}
+	.half-circle {
+		width: 126px;
+		text-align: center;
+		background-color: transparent;
+		border-bottom-left-radius: 50px;
+		border-bottom-right-radius: 50px;
+		border: 1px solid #808080f5;
+		border-top: 0;
+		height: 20px;
+		padding: 0;
+		padding-right: 13px;
+		font-size: 14px;
+		border-left-color: #f4f4f4;
+		border-right-color: #f4f4f4;
+	}
+	button.join_match {
+		border-radius: 15px;
+		height: 40px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}	
+	.trophy-logo{
+		height: 36px;
+	}
+	.custom-trophy ion-label{
+		margin:0
+	}
+	.short_winning_price {
+		border-bottom: 1px solid #222;
+		height: 34px;
+	}
+	.custom_price_detail {
+		box-shadow: none;
+		border: 0.5px solid #00000054;
+		border-radius: 10px;
+	}
+	ion-slide.swiper-slide {
+		align-items: flex-start;
+	}
+	
+	.header-information {
+		text-align: center;
+		width: 80%;
+		margin: auto;
+		padding-top: 10px;
+	}
+	input.text-input.text-input-md {
+		margin: auto 0;
+	}
+	.scroll-content {
+		padding-bottom: 0px !important;
+	}
+}
+ion-radio.radio.radio-md {
+    opacity: 0;
+}
+.item-radio {
+    padding-left: 30px;
+}

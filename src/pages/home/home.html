@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-toolbar>
+    <ion-buttons start left>
+      <button ion-button icon-only color="royal" left>
+		<img class="header-logo" src="../../assets/icon/pubg-01.svg" alt="" />
+      </button>
+    </ion-buttons>
+    <ion-title> US Tourney </ion-title>
+    <ion-buttons end (click)="createTournament()" color="light" *ngIf="profile.role == '4' || profile.role == '1'" right>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="add" style="color:black;" size="large"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs selectedIndex="0">
+    <ion-tab [root]="introduction"  tabIcon="custom-home"></ion-tab>
+    <ion-tab [root]="ListPage"  tabIcon="custom-recent"></ion-tab>
+    <ion-tab [root]="WalletPage"  tabIcon="cash"></ion-tab>
+    <ion-tab [root]="morePage"  tabIcon="custom-profile"></ion-tab>
+ </ion-tabs>
+</ion-content>

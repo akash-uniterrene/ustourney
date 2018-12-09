@@ -1,0 +1,83 @@
+<!--
+  Generated template for the CreateTournamentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+	<ion-buttons left>
+      <button ion-button icon-only (click)="goBack()"> <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon></button>
+    </ion-buttons>
+    <ion-title>Edit Tournament</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-header>
+	<ion-toolbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()"> <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon></button>
+    </ion-buttons>
+    <ion-title> US Tourney </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+	<form>
+    <ion-list>
+	  <ion-item padding-top>
+        <ion-label> Match type </ion-label>
+        <ion-select [(ngModel)]="tournamentForm.matchtype" name="matchtype">
+          <ion-option value="classic">Classic </ion-option>
+          <ion-option value="arcade">Arcade</ion-option>
+        </ion-select>
+      </ion-item>
+	  <ion-item padding-top>
+	   <ion-label> Tournament type </ion-label>
+        <ion-select [(ngModel)]="tournamentForm.tournamenttype" name="tournamenttype">
+          <ion-option value="solo">Solo </ion-option>
+          <ion-option value="duo">Duo</ion-option>
+          <ion-option value="squad">Squad</ion-option>
+        </ion-select>
+      </ion-item>
+	  <ion-item padding-top>
+	   <ion-label> Map type </ion-label>
+        <ion-select [(ngModel)]="tournamentForm.map" name="map">
+          <ion-option value="erangel">Erangel </ion-option>
+          <ion-option value="miramar">Miramar</ion-option>
+          <ion-option value="sanhok">Sanhok</ion-option>
+        </ion-select>
+      </ion-item>
+	  <ion-item padding-top>
+		  <ion-label>Start Date</ion-label>
+		  <ion-datetime displayFormat="YYYY MMM DD " [(ngModel)]="tournamentForm.date" name="date"></ion-datetime>
+	  </ion-item>
+      <ion-item padding-top>
+		  <ion-label>Start Time</ion-label>
+		  <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="tournamentForm.time" name="time" [ngModelOptions]="{standalone:true}"> </ion-datetime>
+	  </ion-item>
+      <ion-item padding-top>
+        <ion-label> Entry Fee </ion-label>
+			<ion-input [(ngModel)]="tournamentForm.entry_fee" name="entry_fee" type="number"></ion-input>
+      </ion-item>
+	  <ion-item padding-top>
+        <ion-label> Winning Type </ion-label>
+		<ion-select [(ngModel)]="tournamentForm.winning_type" name="winning_type">
+          <ion-option value="winning">Winning </ion-option>
+          <ion-option value="killing">Killing</ion-option>
+        </ion-select>
+      </ion-item>
+	  <ion-item padding-top>
+        <ion-label> Winning Amount </ion-label>
+		<ion-input [(ngModel)]="tournamentForm.winning_amount"  name="winning_amount" type="number"></ion-input>
+		
+      </ion-item>	  
+	  <div class="amount_label" right edge *ngIf="tournamentForm.winning_type == 'killing'">/per kill</div>
+    </ion-list>
+  </form>
+</ion-content>
+<ion-footer>
+  <button ion-button block full round (click)="editTournament()" padding>
+        Edit Tournament
+  </button>
+</ion-footer>

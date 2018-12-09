@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-toolbar>
+    <ion-buttons start left>
+      <button ion-button icon-only color="royal" left>
+		<img class="header-logo" src="../../assets/icon/pubg-01.svg" alt="" />
+      </button>
+    </ion-buttons>
+    <ion-title> US Tourney </ion-title>
+    <ion-buttons end (click)="dismiss()" color="light">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="close" style="color:black;" size="large"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+	<div class="bar bar-header bar-light" >
+		<h3 style="text-align:center;" class="title">Make Payment</h3>
+	</div>
+	<ion-card>
+    <div style="position: relative" (click)="viewDetail(item)">
+		<img src="assets/pubgImages/tournament_1.jpg">
+	</div>
+	  <ion-item>
+		<ion-icon color="subtle" large item-start name='flame' style="color:red"></ion-icon>
+		<h2><strong>PUBG <span style="text-transform: uppercase;">{{item.tournamenttype}}</span> TOURNAMENT</strong></h2>
+		<p>Dec 25th 2018 12:00AM</p>
+	  </ion-item>
+	  <ion-grid>
+		  <ion-row>
+			<ion-col>
+			<button ion-button color="danger" large outline (click)="makePayment(item.tournament_id)">
+				Confirm Your Payment 100
+			</button>
+		   </ion-col>
+		  </ion-row>
+	  </ion-grid>  
+  
+	</ion-card>
+</ion-content>

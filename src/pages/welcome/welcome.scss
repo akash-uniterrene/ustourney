@@ -1,0 +1,152 @@
+page-welcome {
+  .splash-bg {
+    position: relative;
+    background: url('../assets/img/splashbg.png') no-repeat transparent;
+    background-size: cover;
+    height: 45%;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+  }
+  
+  .button-clear-md-light {
+		border-color: transparent;
+		color: #222;
+		background-color: transparent;
+	}
+
+  @keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+  }
+
+  .splash-info {
+    position: relative;
+    z-index: 2;
+    margin-top: -64px;
+    text-align: center;
+  }
+  .splash-logo {
+    margin: auto;
+    background: url('../assets/img/appicon.png') repeat transparent;
+    background-size: 100%;
+    width: 128px;
+    height: 128px;
+  }
+  .formContainer.input_field_wrapper {
+		background: #fff;
+  }
+  .splash-intro {
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 80%;
+    margin: auto;
+  }
+  button.login {
+    margin-top: 25px;
+    background-color: #000;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #000;
+
+    &.activated {
+      background-color: #000;
+    }
+  }
+}
+.login_page.singUp{
+  background: url(../../assets/pubgImages/signupBg.jpg) no-repeat center;
+  background-size: cover;
+  background-position-x: 0 !important;
+  background-position-y: 0 !important;
+}
+
+.login_page{
+  background:url(../../assets/pubgImages/loginBg.jpg) left center;
+  background-size: cover;
+  .formContainer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 0 !important;
+
+    .login_btn{
+      height: 40px;
+      border-radius: 14px;
+      text-transform: uppercase;
+      font-size: 14px;
+	  color: #000;
+	  width: 60%;
+	  margin: auto;
+	  border: 1px solid #000;
+    }
+
+    .footer_btn{
+      padding-right: 0;
+      span{
+        justify-content: flex-end;
+        font-size:13px
+      }
+    }  
+    .footer_btn.left{
+      padding-left: 0;
+      span{
+        justify-content: flex-start
+      }
+    }   
+
+    ion-item{
+      background: rgba(255, 255, 255, 0.15);
+      height: 48px;
+      margin-bottom: 12px;
+      border: none !important;
+      padding-left: 20px;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      border-bottom: 1px solid #999 !important;
+
+      .item-inner{
+        border:none !important;
+      }
+
+      ion-label{
+        width:40px;
+        min-width: 40px;
+        max-width: 150px;
+        flex: 0 0 40px;
+        margin-right: 0;
+
+        ion-icon {
+          display: inline-block;
+          font-size: 30px;
+          color: #000;
+        }
+      }
+      ion-input{
+        color: #000;
+        font-size: 15px;
+        input{
+          margin-left: 0;
+          outline: none
+        }
+      }
+      ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #000;
+        font-size: 14px;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: #000;
+        font-size: 14px;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        color: #000;
+        font-size: 14px;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: #000;
+        font-size: 14px;
+      }
+    }
+    
+  }
+
+}
