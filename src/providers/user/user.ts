@@ -151,9 +151,9 @@ export class User {
 	});
   }
   
-  getProfile(id:number,params: any){
+  getProfile(params: any){
 	let user :any;
-	let seq = this.api.get('profile/'+id, params).share();
+	let seq = this.api.get('profile', params).share();
 	// don't have the data yet
 	return new Promise(resolve => {
 		seq.subscribe((res: any) => {
@@ -182,25 +182,25 @@ export class User {
 
     return seq;
   }
+  
+  updatePubgusername(accountInfo: any) {
+    let seq = this.api.post('update-username', accountInfo).share();
+
+    seq.subscribe((res: any) => {
+      
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+  
+  
   /**
    * Send a POST request to our signup endpoint with the data
    * the user entered on the form.
    */
-  getevents(params?: any) {
-	let eventlist = [];	
-	let seq = this.api.get('events/66', '').share();
-
-	// don't have the data yet
-	return new Promise(resolve => {
-		seq.subscribe((res: any) => {
-			eventlist.push(res);
-			resolve(eventlist);
-		}, err => {
-			console.error('ERROR', err);
-		});
-	});
-  }
-
+  
   getProfilePic(){
     if(localStorage.getItem('user_picture') != ''){
      /*  let userPic = localStorage.getItem('user_picture');
@@ -228,14 +228,43 @@ export class User {
 
 		return seq;
   }
-  
+  getTranactions(params?: any) {
+	let tranactions = [];	
+	let seq = this.api.get('transactions', params).share();
+
+	// don't have the data yet
+	return new Promise(resolve => {
+		seq.subscribe((res: any) => {
+			tranactions.push(res);
+			resolve(tranactions);
+		}, err => {
+			console.error('ERROR', err);
+		});
+	});
+  }
+
   /**
    * Send a POST request to our signup endpoint with the data
    * the user entered on the form.
    */
-  connection(params: any) {
+  addMoney(params: any) {
 	 console.log(params); 
-    let seq = this.api.post('connect', params).share();
+    let seq = this.api.post('transaction_success', params).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+  /**
+   * Send a POST request to our signup endpoint with the data
+   * the user entered on the form.
+   */
+  withdrawMoney(params: any) {
+    let seq = this.api.post('withdraw_wallet', params).share();
 
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in

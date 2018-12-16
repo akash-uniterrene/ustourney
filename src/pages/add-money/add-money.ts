@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { NavController } from 'ionic-angular';
 /**
  * Generated class for the AddMoneyPage page.
  *
@@ -14,12 +13,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-money.html',
 })
 export class AddMoneyPage {
-	public amount : number = 100;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddMoneyPage');
+	public amount : number = 0;
+	public loading;
+  constructor(public navCtrl: NavController) {
   }
   
   addCoin(item){
@@ -27,22 +23,21 @@ export class AddMoneyPage {
 	this.amount = item;
   }
   
-  makePayment(){
-	let amount : number = this.amount*100;
-	var options = {
-      description: 'pubg tournament premium',
-      image: 'http://ustourney.cryptofficial.net/pubgImages/payment-logo.jpg',
+  pay() {
+    var options = {
+      description: 'Credits towards consultation',
+      image: 'https://i.imgur.com/3g7nmJC.png',
       currency: 'INR',
-      key: 'rzp_test_xV4r0EQROatoGV',
-      amount: amount,
-      name: 'US Tourney Wallet',
+      key: 'rzp_test_Zrfx3pymHeiPjb',
+      amount: '5000',
+      name: 'foo',
       prefill: {
-        email: localStorage.getItem('user_email'),
-        contact: '',
-        name: localStorage.getItem('user_firstname')+' '+localStorage.getItem('user_lastname')
+        email: 'akash@dutta.com',
+        contact: '8879524924',
+        name: 'Akash Dutta'
       },
       theme: {
-        color: '#ffffff'
+        color: '#F37254'
       },
       modal: {
         ondismiss: function() {
@@ -61,6 +56,4 @@ export class AddMoneyPage {
 
     RazorpayCheckout.open(options, successCallback, cancelCallback);
   }
-  
-  
 }

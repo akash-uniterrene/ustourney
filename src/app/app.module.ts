@@ -13,16 +13,11 @@ import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { StorageProvider } from '../providers/storage/storage';
 import { ForgetPasswordProvider } from '../providers/forget-password/forget-password';
-
-import { SQLitePorter } from '@ionic-native/sqlite-porter';
-import { SQLite } from '@ionic-native/sqlite';
-
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 
 import { MyApp } from './app.component';
 import { TournamentProvider } from '../providers/tournament/tournament';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
@@ -73,13 +68,10 @@ export function provideSettings(storage: Storage) {
     Camera,
     SplashScreen,
 	StorageProvider,
-	SQLitePorter,
-    SQLite,	
 	FileTransfer,
 	FileTransferObject,
 	File,
     StatusBar,
-	InAppBrowser,
 	ForgetPasswordProvider,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development

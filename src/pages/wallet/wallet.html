@@ -28,16 +28,11 @@
 	<strong>Recent Transaction</strong>
   </ion-list-header>
   <ion-item >
-	Test Transaction
+	AMOUNT - TYPE - DATE
   </ion-item>
-  <ion-item>
-	Test Transaction
+  <ion-item *ngFor="let transaction of transactions">
+	&#x20b9; {{transaction.amount}} - {{transaction.transaction_type}} - {{transaction.created_at}} 
   </ion-item>
-  <ion-item>
-	Test Transaction
-  </ion-item>
-  <ion-item>
-	Test Transaction
-  </ion-item>  
 </ion-list>
+
 </ion-content>

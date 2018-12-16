@@ -1,3 +1,40 @@
 page-withdraw-money {
-
+	button.button.button-md.button-outline.button-outline-md.button-large.button-large-md.button-outline-md-danger {
+		width: 100%;
+		height: 35px;
+	}
+	ion-item.middle_card_section.item.item-block.item-md {
+		padding: 0;
+	}
+	.payment_button {
+		text-align: center;
+		font-size: 12px;
+		width: 70%;
+		margin-left: 15%;
+		border-radius: 15px;
+		height: 35PX;
+		color: #000;
+	}
+	.money_add_count {
+		border: 1px solid;
+		text-align:center;
+	}
+	.money_add_count:first-child {
+		border: 1px solid;
+		text-align:center;
+		border-right: 0px;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+	}
+	.money_add_count:last-child {
+		border: 1px solid;
+		text-align:center;
+		border-left: 0px;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+	}
+	p.label {
+		width: 80%;
+		margin: auto;
+	}
 }

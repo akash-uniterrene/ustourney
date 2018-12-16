@@ -47,6 +47,20 @@ export class TournamentProvider {
     return seq;
   }
   
+  
+  joinTournament(userInfo: any) {
+    let seq = this.api.post('join-tournament', userInfo).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+  
   /**
    * Send a POST request to our signup endpoint with the data
    * the user entered on the form.

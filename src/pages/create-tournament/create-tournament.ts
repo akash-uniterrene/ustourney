@@ -99,8 +99,8 @@ export class CreateTournamentPage {
   }
   
   createTournament() {
-	this.loading.present();
-	//Attempt to login in through our User service
+	  this.loading.present();
+	  //Attempt to login in through our User service
       this.tournament.createTournament(this.tournamentForm).subscribe((resp) => {
         this.loading.dismiss();
         // Unable to sign up

@@ -10,13 +10,13 @@ import { Items } from '../../providers';
 })
 export class ItemDetailPage {
   item: any = [];
-  public tournament_id : any;
+  public tournamentRecord : any = [];
   constructor(public navCtrl: NavController, navParams: NavParams, items: Items, public tournament: TournamentProvider) {
-    this.tournament_id = navParams.get('tournament_id') || 1;
+    this.tournamentRecord = navParams.get('item');
   }
    
    ionViewDidLoad() {
-    this.tournament.getTournament({tournament_id:this.tournament_id}).then(data => {
+    this.tournament.getTournament({tournament_id:this.tournamentRecord.tournament_id}).then(data => {
 		this.item = data;
 	});
 	console.log(this.item);

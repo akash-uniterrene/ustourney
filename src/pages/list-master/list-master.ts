@@ -16,7 +16,7 @@ export class ListMasterPage {
   }
   
   getTournaments(){
-	this.tournament.getTournaments({filter:'coming'})
+	this.tournament.getTournaments({filter:'played',user_id:localStorage.getItem('user_id')})
 	.then(data => {
 		let item = data[0];
 		for (var key in item) {

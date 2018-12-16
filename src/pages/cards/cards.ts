@@ -10,66 +10,16 @@ import { TournamentProvider } from '../../providers/tournament/tournament';
 export class CardsPage {
   tournamentItems: any = [];
   item : any = [];
-  constructor(public navCtrl: NavController, public tournament: TournamentProvider, public modalCtrl: ModalController) {
-    /* this.tournamentItems = [
-      {
-		'matchtype':'classic',
-		'tournamenttype':'solo',
-		'map':'erangel',
-		'month':'',
-		'time':'',
-		'user': {
-			  'avatar': 'assets/img/marty-avatar.png',
-			  'name': 'Marty McFly'
-			},
-		'entry_fee':'',
-		'winning_type':'winning',
-		'winning_amount':'',
-		'image':'assets/pubgImages/tournament_1.jpg'
-	  },
-      {
-		'matchtype':'classic',
-		'tournamenttype':'solo',
-		'map':'erangel',
-		'month':'',
-		'time':'',
-		'user': {
-			  'avatar': 'assets/img/marty-avatar.png',
-			  'name': 'Marty McFly'
-			},
-		'entry_fee':'',
-		'winning_type':'winning',
-		'winning_amount':'',
-		'image':'assets/pubgImages/tournament_1.jpg'
-	  },
-      {
-		'matchtype':'classic',
-		'tournamenttype':'solo',
-		'map':'erangel',
-		'month':'',
-		'time':'',
-		'user': {
-			  'avatar': 'assets/img/marty-avatar.png',
-			  'name': 'Marty McFly'
-			},
-		'entry_fee':'',
-		'winning_type':'winning',
-		'winning_amount':'',
-		'image':'assets/pubgImages/tournament_1.jpg'
-	  }
-    ]; */
+  constructor(public navCtrl: NavController, public tournament: TournamentProvider, public modalCtrl: ModalController) {    
 	
-	this.getTournaments();
-
   }
   
   ionViewDidLoad() {
-    // Build an empty form for the template to render
-   
+    this.getTournaments();
   }
   
   getTournaments(){
-	this.tournament.getTournaments({filter:'coming'})
+	this.tournament.getTournaments({filter:'coming',user_id:localStorage.getItem('user_id')})
 	.then(data => {
 		let item = data[0];
 		for (var key in item) {
@@ -79,7 +29,7 @@ export class CardsPage {
   }
 	viewDetail(item) {
 		this.navCtrl.push('ItemDetailPage', {
-		  'tournament_id': item.tournament_id
+		  'item': item
 		});
 	}
 	

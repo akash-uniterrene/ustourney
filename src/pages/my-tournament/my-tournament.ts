@@ -49,6 +49,10 @@ export class MyTournamentPage {
 		
 	}
 	
+	goWinners(tournament_id){
+		this.navCtrl.push('WinnersPage',{tournament_id:tournament_id});
+	}
+	
 	announce(tournament_id){
 		this.navCtrl.push('AnnouncementPage', {
 		  'tournament_id': tournament_id,'userStatus':'admin'

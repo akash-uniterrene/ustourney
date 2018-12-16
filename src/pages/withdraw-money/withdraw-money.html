@@ -1,3 +1,24 @@
-<ion-content padding>
-
+<ion-content>
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+	  <ion-item>
+		<ion-label fixed> Enter Amount </ion-label>
+		<ion-input type="number" value="" [(ngModel)]="amount" ></ion-input>
+	  </ion-item>
+	</ion-list>
+    <ion-grid margin-top>
+	  <ion-row>
+		<p class="label"> * Wallet limit must be above Rs 100/- </p>
+	  </ion-row>
+	  <ion-row margin-top>
+		<ion-col col-12>
+			<button ion-button color="danger" outline (click)="withdrawPayment()" class="payment_button">
+				Withdraw Money
+			</button>
+		</ion-col>
+	  </ion-row>	  
+	</ion-grid>
+  </ion-card-content>
+</ion-card>
 </ion-content>

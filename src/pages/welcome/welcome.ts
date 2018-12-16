@@ -24,7 +24,6 @@ export class WelcomePage {
 		user_name: '',
 		user_password: ''
 	};
-	private imageURL = "https://dev.followthebirds.com/content/uploads/";
 	loggedinUser : any = [];
 	respUser : any = [];
 	
@@ -44,7 +43,6 @@ export class WelcomePage {
 	)
 	{
 
-		this.createDirectory();
 		this.menu.enable(false); 
 		this.translateService.get('LOGIN_ERROR').subscribe((value) => {
 		  this.loginErrorString = value;
@@ -82,35 +80,6 @@ export class WelcomePage {
 		  toast.present();
 		});
 	}
-	
-	getUserData(params){
-		this.storage.getUser(params.user_id).then(user => {
-			if(user[0]){
-				this.loggedinUser = user[0];
-				
-				if(this.loggedinUser.user_picture_id != params.user_picture_id){				
-					this.download(params.user_picture,'ProfilePic');
-				}
-				
-				if(this.loggedinUser.user_cover_id != params.user_cover_id){				
-					this.download(params.user_cover,'CoverPic');
-				}
-				
-				
-			} else {
-				this.insertUserData(params);
-				if(params.user_picture_id != '') { this.download(params.user_picture,'ProfilePic'); }
-				if(params.user_cover_id != '') { this.download(params.user_cover,'CoverPic'); }
-					
-			}
-		})  
-	}
-	
-	insertUserData(resp){
-		this.storage.insertUser(resp).then(user => {
-
-		}) 
-	}
   
 	signup() {
 		this.navCtrl.push('SignupPage');
@@ -118,14 +87,6 @@ export class WelcomePage {
 
 	forgetPasswordpage(){
 		this.nav.push('ForgetPasswordPage');
-	}
-	
-	createDirectory(){
-		this.storage.createFolder();
-	}
-	
-	download(url,folder) {
-	  this.storage.imageDownload(url,folder);
 	}
 
  

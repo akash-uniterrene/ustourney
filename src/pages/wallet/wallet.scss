@@ -60,6 +60,10 @@ page-wallet {
 		border: 1px solid #bdbdbd;
 		border-radius: 15px;
 		overflow: hidden;
+		height: 240px;
+		position: absolute;
+		overflow-y: scroll;
+		width: 92%;
 	}
 	
 	
